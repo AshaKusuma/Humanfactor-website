@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<div>
+  <label for="userAnswer">Your Answer:</label>
+  <input type="text" id="userAnswer">
+  <button id="submitAnswer">Submit</button>
+</div>
+<div id="answerContainer" style="display: none;">
+  <p>Correct Answer:</p>
+  <p id="The correct answer is 0 (zero)"></p>
+</div>
+
+<script>
+  // Function to check the user's answer and reveal the correct answer
+  function checkAnswer() {
+    const userAnswer = document.getElementById('userAnswer').value;
+    const correctAnswer = 'Your Correct Answer'; // Replace with the actual correct answer
+
+    if (userAnswer.trim().toLowerCase() === correctAnswer.toLowerCase()) {
+      document.getElementById('correctAnswer').textContent = correctAnswer;
+      document.getElementById('answerContainer').style.display = 'block';
+    } else {
+      alert('Incorrect answer. Try again!');
+    }
+  }
+
+  // Attach the checkAnswer function to the submit button
+  document.getElementById('submitAnswer').addEventListener('click', checkAnswer);
+</script>
+
+</html>
